@@ -97,3 +97,11 @@ call change_maxedWH('maxedWH', 'medium');
 
 call change_maxedWH('maxedWH', 'large');
 -- Not a valid Warehouse size
+
+-- clean up
+use role wh_admin;
+drop warehouse if exists maxedwh;
+drop database if exists procs;
+use role accountadmin;
+drop role if exists wh_admin;
+drop role if exists wh_user;
