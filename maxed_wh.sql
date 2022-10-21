@@ -41,7 +41,7 @@ $$
   var sqlStmt = "";
   var rs = "";
   var curSize = "";
-  var whSizesAllowed = ["X-SMALL", "XSMALL", "SMALL", "MEDIUM"];
+  var whSizesAllowed = ["X-SMALL", "XSMALL", "SMALL", "MEDIUM"]; ---this is where you specify the allowed sizes to change to warehouses
 
   try {
     // first validate the warehouse exists and get the current size
