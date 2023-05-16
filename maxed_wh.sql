@@ -58,7 +58,7 @@ $$
 
     // next validate the new size is in the acceptable range
     if (whSizesAllowed.indexOf(P_WH_SIZE.toUpperCase()) == -1) {
-      throw new Error('Not a valid Warehouse size');
+      throw new Error('Not a valid warehouse size');
     };
 
     // set Warehouse size
@@ -66,7 +66,7 @@ $$
     sqlStmt = snowflake.createStatement( {sqlText: sqlCmd, binds: [P_WH_SIZE]} );
     sqlStmt.execute();
 
-    result = "Resized Warehouse " + P_WH_NM + " from: " + curSize + " to: " + P_WH_SIZE.toUpperCase();
+    result = "Resized warehouse " + P_WH_NM + " from " + curSize + " to " + P_WH_SIZE.toUpperCase();
   }
   catch (err) {
     if (err.code === undefined) {
@@ -93,10 +93,10 @@ alter warehouse maxedwh
 
 -- modify warehouse size using the STP
 call change_maxedWH('maxedWH', 'medium');
--- Resized Warehouse maxedWH from: SMALL to: MEDIUM
+-- Resized warehouse maxedWH from SMALL to MEDIUM
 
 call change_maxedWH('maxedWH', 'large');
--- Not a valid Warehouse size
+-- Not a valid warehouse size
 
 -- clean up
 use role wh_admin;
